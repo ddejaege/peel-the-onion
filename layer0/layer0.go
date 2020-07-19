@@ -15,10 +15,10 @@ func main() {
         return
     }
 
-    layerOneEncodedBytes := []byte(string(data))
-    layerOneDecodedBytes := make([]byte, len(layerOneEncodedBytes))
+    layerZeroEncodedBytes := []byte(string(data))
+    layerOneDecodedBytes := make([]byte, len(layerZeroEncodedBytes))
     
-    nLayerOneDecodedBytes, _, err := ascii85.Decode(layerOneDecodedBytes, layerOneEncodedBytes, true)
+    nLayerOneDecodedBytes, _, err := ascii85.Decode(layerOneDecodedBytes, layerZeroEncodedBytes, true)
     if err != nil {
         fmt.Println("Error decoding input", err)
     }
